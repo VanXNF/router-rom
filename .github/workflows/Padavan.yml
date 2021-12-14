@@ -87,6 +87,7 @@ jobs:
     - name: 修改配置
       if: true
       run: |
+        sed -i "s/FRP_VER := 0.29.0/FRP_VER := 0.38.0/g" ${{ env.DIR }}/trunk/user/frp/Makefile
         sed -i "s/CONFIG_FIRMWARE_INCLUDE_FRPC=n/CONFIG_FIRMWARE_INCLUDE_FRPC=y/g" ${{ env.DIR }}/trunk/configs/templates/K2P_nano.config
         sed -i "s/CONFIG_FIRMWARE_INCLUDE_FRPS=n/CONFIG_FIRMWARE_INCLUDE_FRPS=y/g" ${{ env.DIR }}/trunk/configs/templates/K2P_nano.config
         sed -i "s/CONFIG_FIRMWARE_INCLUDE_FRPC=n/CONFIG_FIRMWARE_INCLUDE_FRPC=y/g" ${{ env.DIR }}/trunk/configs/templates/K2P.config
